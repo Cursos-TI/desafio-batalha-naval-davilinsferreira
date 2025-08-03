@@ -7,12 +7,14 @@ int main () {
     // Declaração de arrays
     int navio_horizontal[tamanho_navio];
     int navio_vertical[tamanho_navio];
+    int navio_diagonal[tamanho_navio];
 
     // Inicializando os valores dos arrays
     for (int i = 0; i < tamanho_navio; i++)
     {
         navio_horizontal[i] = 3;
         navio_vertical[i] = 3;
+        navio_diagonal[i] = 3;
     }
 
     // Cabeçalho do tabuleiro
@@ -41,6 +43,32 @@ int main () {
         if (linha_navio_v + i < 10)
         {
             tabuleiro[linha_navio_v + i][coluna_navio_v] = navio_vertical[i];
+        }
+    }
+    
+    // Posicionando o primeiro navio na diagonal
+    int linha_navio_d = 7;
+    int coluna_navio_d = 7;
+
+    
+    for (int i = 0; i < tamanho_navio; i++)
+    {
+        if (linha_navio_d + i < 10 && coluna_navio_d + i < 10)
+        {
+            tabuleiro[linha_navio_d + i][coluna_navio_d + i] = navio_diagonal[i];
+        }
+    }
+    
+    // Posicionando o segundo navio na diagonal
+    int linha_navio_d2 = 0;
+    int coluna_navio_d2 = 9;
+
+    
+    for (int i = 0; i < tamanho_navio; i++)
+    {
+        if (linha_navio_d2 + i < 10 && coluna_navio_d2 - i < 10)
+        {
+            tabuleiro[linha_navio_d2 + i][coluna_navio_d2 - i] = navio_diagonal[i];
         }
     }
 
